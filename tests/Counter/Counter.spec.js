@@ -1,6 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { Counter } from 'routes/Counter/components/Counter'
+import { Counter } from '../../src/Counter/Counter'
 import { shallow } from 'enzyme'
 
 describe('(Component) Counter', () => {
@@ -11,8 +11,9 @@ describe('(Component) Counter', () => {
     _props = {
       counter : 5,
       ...bindActionCreators({
-        doubleAsync : (_spies.doubleAsync = sinon.spy()),
-        increment   : (_spies.increment = sinon.spy())
+        increase   : (_spies.increase = sinon.spy()),
+        decrease : (_spies.decrease = sinon.spy()),
+        reset : (_spies.reset = sinon.spy())
       }, _spies.dispatch = sinon.spy())
     }
     _wrapper = shallow(<Counter {..._props} />)
@@ -32,15 +33,15 @@ describe('(Component) Counter', () => {
     expect(_wrapper.find('h2').text()).to.match(/8$/)
   })
 
-  it('renders exactly two buttons.', () => {
-    expect(_wrapper.find('button')).to.have.length(2)
+  it('renders exactly three buttons.', () => {
+    expect(_wrapper.find('button')).to.have.length(3)
   })
 
-  describe('Increment', () => {
+  describe('Increase', () => {
     let _button
 
     beforeEach(() => {
-      _button = _wrapper.find('button').filterWhere(a => a.text() === 'Increment')
+      _button = _wrapper.find('button').filterWhere(a => a.text() === 'Increase')
     })
 
     it('exists', () => {
@@ -51,38 +52,38 @@ describe('(Component) Counter', () => {
       expect(_button.hasClass('btn btn-primary')).to.be.true()
     })
 
-    it('Calls props.increment when clicked', () => {
+    it('Calls props.increase when clicked', () => {
       _spies.dispatch.should.have.not.been.called()
 
       _button.simulate('click')
 
       _spies.dispatch.should.have.been.called()
-      _spies.increment.should.have.been.called()
+      _spies.increase.should.have.been.called()
     })
   })
 
-  describe('Double Async Button', () => {
+  describe('Decrease', () => {
     let _button
 
     beforeEach(() => {
-      _button = _wrapper.find('button').filterWhere(a => a.text() === 'Double (Async)')
+      _button = _wrapper.find('button').filterWhere(a => a.text() === 'Decrease')
     })
 
     it('exists', () => {
       expect(_button).to.exist()
     })
 
-    it('is a secondary button', () => {
-      expect(_button.hasClass('btn btn-secondary')).to.be.true()
+    it('is a primary button', () => {
+      expect(_button.hasClass('btn btn-primary')).to.be.true()
     })
 
-    it('Calls props.doubleAsync when clicked', () => {
+    it('Calls props.decrease when clicked', () => {
       _spies.dispatch.should.have.not.been.called()
 
       _button.simulate('click')
 
       _spies.dispatch.should.have.been.called()
-      _spies.doubleAsync.should.have.been.called()
+      _spies.decrease.should.have.been.called()
     })
   })
 })

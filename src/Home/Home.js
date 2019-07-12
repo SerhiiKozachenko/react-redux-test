@@ -1,6 +1,6 @@
 import React from 'react'
-import DuckImage from '../assets/Duck.jpg'
-import './HomeView.scss'
+import DuckImage from './assets/Duck.jpg'
+import './Home.scss'
 
 export const HomeView = () => (
   <div>

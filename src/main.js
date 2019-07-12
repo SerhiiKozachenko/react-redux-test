@@ -12,7 +12,7 @@ const store = createStore(window.__INITIAL_STATE__)
 const MOUNT_NODE = document.getElementById('root')
 
 let render = () => {
-  const App = require('./components/App').default
+  const App = require('./containers/AppContainer').default
   const routes = require('./routes/index').default(store)
 
   ReactDOM.render(
@@ -43,7 +43,7 @@ if (__DEV__) {
 
     // Setup hot module replacement
     module.hot.accept([
-      './components/App',
+      './containers/AppContainer',
       './routes/index',
     ], () =>
       setImmediate(() => {
