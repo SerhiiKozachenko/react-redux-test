@@ -30,10 +30,6 @@ export const Todos = ({ todos, remove }) => (
 Todos.propTypes = {
   todos: PropTypes.array.isRequired,
   remove: PropTypes.func.isRequired
-  // counter: PropTypes.number.isRequired,
-  // increase: PropTypes.func.isRequired,
-  // decrease: PropTypes.func.isRequired,
-  // reset: PropTypes.func.isRequired
 }
 
 export default Todos

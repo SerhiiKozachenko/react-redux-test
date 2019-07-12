@@ -14,9 +14,6 @@ import Todos from './Todos'
 
 const mapDispatchToProps = {
   remove: (todo) => remove(todo)
-  // increase : () => increase(1),
-  // decrease: () => decrease(1),
-  // reset: () => reset()
 }
 
 const mapStateToProps = (state) => ({
