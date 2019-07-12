@@ -2,6 +2,7 @@
 import CoreLayout from '../layouts/PageLayout/PageLayout'
 import Home from '../Home'
 import Counter from '../Counter'
+import Todos from  '../Todos'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -13,6 +14,9 @@ export const createRoutes = (store) => ({
   childRoutes : [{
     path: '/counter',
     component: Counter(store)
+  }, {
+    path: '/todos',
+    component: Todos(store)
   }]
 })
 

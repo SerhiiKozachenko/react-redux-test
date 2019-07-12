@@ -4,7 +4,7 @@ import {
   increase,
   decrease,
   default as counterReducer
-} from '../../src/Counter/CounterReducers'
+} from '../../src/Counter/CounterReducer'
 
 describe('CounterReducers', () => {
   it('Should export a constant COUNTER_INCREASE.', () => {

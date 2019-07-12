@@ -28,12 +28,6 @@ export function reset () {
   }
 }
 
-export const actions = {
-  increase,
-  decrease,
-  reset
-}
-
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
