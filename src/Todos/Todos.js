@@ -8,10 +8,10 @@ export const Todos = ({ todos, remove }) => (
     {
       todos.map((t, idx) => (
         <li key={t} className='list-group-item d-flex justify-content-between align-items-center'>
-        {++idx}. {t}
-        <button className='close' onClick={() => remove(t)}>
-          <span >&times;</span>
-        </button>
+          {++idx}. {t}
+          <button className='close' onClick={() => remove(t)}>
+            <span >&times;</span>
+          </button>
         </li>
       ))
     }

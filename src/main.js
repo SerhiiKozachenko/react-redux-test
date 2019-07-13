@@ -15,6 +15,7 @@ let render = () => {
   const App = require('./containers/AppContainer').default
   const routes = require('./routes/index').default(store)
 
+  console.log('React version: ', React.version)
   ReactDOM.render(
     <App store={store} routes={routes} />,
     MOUNT_NODE
