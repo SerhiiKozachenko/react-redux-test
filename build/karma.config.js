@@ -1,5 +1,6 @@
 const argv = require('yargs').argv
 const webpackConfig = require('./webpack.config')
+const babelPolyfillBrowserPath = require.resolve('babel-polyfill/browser')
 
 const TEST_BUNDLER = './tests/test-bundler.js'
 
@@ -12,12 +13,15 @@ const karmaConfig = {
       { type: 'text-summary' },
     ],
   },
-  files: [{
-    pattern  : TEST_BUNDLER,
-    watched  : false,
-    served   : true,
-    included : true
-  }],
+  files: [
+    // Support ES6
+    { pattern: babelPolyfillBrowserPath, instrument: false },
+    {
+      pattern  : TEST_BUNDLER,
+      watched  : false,
+      served   : true,
+      included : true
+    }],
   frameworks: ['mocha'],
   reporters: ['mocha'],
   preprocessors: {
