@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { remove } from './TodosReducer'
+import { add, remove, edit } from './TodosReducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -13,7 +13,9 @@ import Todos from './Todos'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  remove: (todo) => remove(todo)
+  add: (todo) => add(todo),
+  remove: (todo) => remove(todo),
+  edit: (prev, updated) => edit(prev, updated)
 }
 
 const mapStateToProps = (state) => ({

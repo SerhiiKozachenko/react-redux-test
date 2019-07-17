@@ -1,0 +1,32 @@
+.input-group {
+  position: relative;
+
+  .error-message {
+    position: absolute;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+    bottom: -24px;
+    color: red;
+  }
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 57px;
+}
+
+.task {
+  .close.pencil {
+    margin-left: auto;
+    margin-right: 6px;
+    span {
+      height: 24px;
+    }
+  }
+}
+
+.task.selected {
+  background: lightblue;
+}
