@@ -2,7 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  justify-content: space-around;
+  justify-content: center;
+  i {
+    width: 225px;
+    margin: 10px;
+  }
   .nav.nav-pills.flex-column.flex-sm-row {
     width: 100vw;
     flex: 0 0 100%;

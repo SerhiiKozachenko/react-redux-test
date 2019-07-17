@@ -69,7 +69,13 @@ export const Products = () => {
       </nav>
       <hr />
       { filterProductsByCategory(selectedCategory) }
-
+      
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
       {/*TODO: Replace with responsive products grid*/}
       {/*<pre dangerouslySetInnerHTML={{__html: JSON.stringify(filterProductsByCategory(selectedCategory), null, 2) }}></pre>*/}
     </div>
