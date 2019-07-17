@@ -28,12 +28,20 @@ export function reset () {
   }
 }
 
+function checkIfZero(state, action) { 
+  if (state === 0) {
+    return state
+  } else {
+    return state - action.payload
+  }
+}
+
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
   [COUNTER_INCREASE]: (state, action) => state + action.payload,
-  [COUNTER_DECREASE]: (state, action) => state - action.payload,
+  [COUNTER_DECREASE]: (state, action) => checkIfZero(state, action),
   [COUNTER_RESET]: (state, action) => 0
 }
 

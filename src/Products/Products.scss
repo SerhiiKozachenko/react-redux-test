@@ -1,3 +1,37 @@
 .products-container {
-  margin: '0 auto'
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-around;
+  .nav.nav-pills.flex-column.flex-sm-row {
+    width: 100vw;
+    flex: 0 0 100%;
+  }
+  .product {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    flex: 0 0 225px;
+    margin: 10px;
+    .product-image {
+      height: 200px;
+      border-radius: 3px;
+      border-bottom: 1px solid lightgray;
+    }
+    .product-details {
+      justify-content: flex-end;
+      padding-top: 15px;
+      padding-left: 10px;
+      font-size: 1rem;
+      text-align: left;
+      .product-name {
+        font-size: 0.9rem;
+        text-overflow: hidden;
+        min-height: 30px;
+      }
+      .product-price {
+        color: orange;
+        font-size: 0.7em;
+      }
+    }
+  }
 }
