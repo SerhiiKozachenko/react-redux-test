@@ -14,13 +14,14 @@ function mapProduct(product) {
   
   return (
     <div key={product.product_id+Math.random()} className="product">
-      <img
-        onMouseEnter={() => activate()}
-        onMouseLeave={() => deactivate()}
-        className="product-image"
-        src={product.url}
-        alt={product.name}
-      />
+      <div className="img-container">
+        <div
+          onMouseEnter={() => activate()}
+          onMouseLeave={() => deactivate()}
+          className="product-image"
+          style={{backgroundImage: `url(${product.url})`}}
+        />
+      </div>
       <div  className="product-details">
         <h5 className="product-name">{product.name}</h5>
         <h5 className="product-price">STARTING AT {product.cheapest_price}</h5>

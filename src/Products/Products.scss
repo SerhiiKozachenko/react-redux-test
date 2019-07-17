@@ -12,10 +12,25 @@
     border-radius: 3px;
     flex: 0 0 225px;
     margin: 10px;
-    .product-image {
-      height: 200px;
-      border-radius: 3px;
-      border-bottom: 1px solid lightgray;
+    .img-container {
+      position: relative;
+      z-index: 2;
+      .product-image {
+        position: relative;
+        z-index: 1;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 3px;
+        border-bottom: 1px solid lightgray;
+      }
+      &:hover {
+        background-color: lightblue;
+        .product-image {
+          opacity: 0.3;
+        }
+      }
     }
     .product-details {
       justify-content: flex-end;
