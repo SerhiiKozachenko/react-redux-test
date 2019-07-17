@@ -112,8 +112,21 @@ const TodoList = ({ todos, remove, edit, editing }) => (
 )
 
 Todos.propTypes = {
-  add: PropTypes.func.isRequired,
   todos: PropTypes.array.isRequired,
+  add: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
+  edit: PropTypes.func.isRequired,
+}
+
+TodoList.propTypes = {
+  todos: PropTypes.array.isRequired,
+  editing: PropTypes.string,
+  remove: PropTypes.func.isRequired,
+  edit: PropTypes.func.isRequired,
+};
+
+TodoList.defaultProps = {
+  editing: null,
 }
 
 export default Todos
