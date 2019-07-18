@@ -19,20 +19,71 @@
     .img-container {
       position: relative;
       z-index: 2;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0);
+      .detail-link {
+        opacity: 0;
+        display: none;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        top: 15%;
+        transition: opacity 1.5s ease-in-out;
+      }
+      .detail-pick {
+        opacity: 0;
+        display: none;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        bottom: 20%;
+        transition: opacity 1.5s ease-in-out;
+      }
       .product-image {
         position: relative;
+        opacity: 1;
         z-index: 1;
-        height: 200px;
-        background-size: contain;
+        height: 225px;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 3px;
         border-bottom: 1px solid lightgray;
+        transition: background 1,5s ease-in-out, opacity 1.5s ease-in-out;
       }
       &:hover {
-        background-color: lightblue;
+        background: linear-gradient(180deg, #00868B, #00868B 49.5%, white 49.5%, white 50.5%, #ff5252 50.5%);
+        opacity: 1;
+        transition: background 1.5s ease-in-out, opacity 1.5s ease-in-out;
         .product-image {
-          opacity: 0.3;
+        opacity: 0.2;
+        background-color: white;
+        background: linear-gradient(180deg, #00868B, #00868B 49.5%, white 49.5%, white 50.5%, #ff5252 50.5%);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: background 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+        .detail-link {
+          opacity: 1;
+          color: white;
+          display: unset;
+          transition: opacity 1.5s ease-in-out 1s;
+        }
+        .detail-pick {
+          opacity: 1;
+          display: unset;
+          transition: opacity 1.5s ease-in-out;
         }
       }
     }

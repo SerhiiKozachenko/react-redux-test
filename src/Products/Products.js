@@ -9,18 +9,16 @@ const toSlug = (name) => `#${name.toLowerCase().replace(' ', '-')}`
 
 function mapProduct(product) {
 
-  const deactivate = () => console.log('deactivated')
-  const activate = () => console.log('activated')
   
   return (
     <div key={product.product_id+Math.random()} className="product">
       <div className="img-container">
+        <a className="detail-link" target="_blank" href="https://www.google.com">PRODUCT DETAIL</a>
         <div
-          onMouseEnter={() => activate()}
-          onMouseLeave={() => deactivate()}
           className="product-image"
           style={{backgroundImage: `url(${product.url})`}}
         />
+        <a className="detail-pick" target="_blank" href="https://www.google.com">PICK THIS</a>
       </div>
       <div  className="product-details">
         <h5 className="product-name">{product.name}</h5>
