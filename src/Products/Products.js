@@ -51,21 +51,32 @@ export const Products = () => {
             ))
         }
       </nav>
-      <div className="product-grid">
-        {products.map(p => (
-          <div key={p.id} p={p} className="product">
-            <div className="image">
-              <img src={p.image}/>
-            </div>
-            <p>{p.name}</p>
-            <p>Starting at {p.price}</p>
-          </div>
-        ))}
-      </div>
-      {/*TODO: Replace with responsive products grid*/}
-
+      <div className="product-grid">{products.map(p => <Product {...p} />)}</div>
     </div>
   )
+}
+
+const Product = ({ id, image, name, price }) => (
+  <div key={id} className="product">
+    <div className="image">
+      <div onClick={() => alert(`details: id${id} name${name} price${price}`)} className="details">
+        Product details
+      </div>
+      <div onClick={() => alert(`picked: ${id} ${name}`)} className="pick">
+        Pick this
+      </div>
+      <img src={image}/>
+    </div>
+    <p>{name}</p>
+    <p>Starting at {price}</p>
+  </div>
+)
+
+Product.propTypes = {
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 }
 
 export default Products

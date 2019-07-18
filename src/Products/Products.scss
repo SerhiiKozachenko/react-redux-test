@@ -5,6 +5,8 @@
 .product-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .product {
@@ -12,14 +14,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: calc(25% - 20px);
+  width: 24%;
   border: 1px solid #EDEBED;
-  margin: 5px 10px;
+  margin: 5px 0;
 
   &:hover {
     .image {
-      &::after,
-      &::before {
+      .details,
+      .pick {
         opacity: 1;
       }
     }
@@ -39,33 +41,34 @@
       z-index: 0;
     }
     border-bottom: 1px solid #EDEBED;
+  }
 
-    &::after,
-    &::before {
-      position: absolute;
-      left: 0;
-      text-transform: uppercase;
-      height: 50%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      opacity: 0;
-      cursor: pointer;
-      transition: opacity 0.5s;
-      z-index: 1;
-    }
-    &::after {
-      content: 'Product details';
-      top: 0;
-      background: rgba(0, 120, 120, 0.5);
-    }
-    &::before {
-      content: 'Pick this';
-      bottom: 0;
-      background: rgba(175, 17, 28, 0.5);
-    }
+  .details,
+  .pick {
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    z-index: 1;
+  }
+
+  .details {
+    content: 'Product details';
+    top: 0;
+    background: rgba(0, 120, 120, 0.5);
+  }
+  .pick {
+    content: 'Pick this';
+    bottom: 0;
+    background: rgba(175, 17, 28, 0.5);
   }
 
   p {
@@ -75,13 +78,13 @@
 
 @media (max-width: 1000px) {
   .product {
-    width: calc(33% - 20px);
+    width: 32%;
   }
 }
 
 
 @media (max-width: 770px) {
   .product {
-    width: calc(50% - 20px);
+    width: 48%;
   }
 }
