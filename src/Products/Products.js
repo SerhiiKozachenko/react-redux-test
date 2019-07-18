@@ -51,7 +51,12 @@ export const Products = () => {
             ))
         }
       </nav>
-      <div className="product-grid">{products.map(p => <Product {...p} />)}</div>
+      <div className="product-grid">
+        {products.map(p => <Product {...p} />)}
+        <div className="product-placeholder" />
+        <div className="product-placeholder" />
+        <div className="product-placeholder" />
+      </div>
     </div>
   )
 }

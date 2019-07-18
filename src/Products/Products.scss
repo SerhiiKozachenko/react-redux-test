@@ -9,6 +9,11 @@
   align-items: center;
 }
 
+.product-placeholder,
+.product {
+  width: 24%;
+}
+
 .product {
   box-sizing: border-box;
   display: flex;
@@ -77,14 +82,16 @@
 }
 
 @media (max-width: 1000px) {
-  .product {
+  .product,
+  .product-placeholder {
     width: 32%;
   }
 }
 
 
 @media (max-width: 770px) {
-  .product {
+  .product,
+  .product-placeholder {
     width: 48%;
   }
 }
