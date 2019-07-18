@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import './Products.scss'
 import fakeProductsData from './fakeProductsData.json'
+import ProductList from './ProductList'
 
 const formatName = (name) => name.replace('&amp;', '&')
 const toSlug = (name) => `#${name.toLowerCase().replace(' ', '-')}`
@@ -51,9 +52,8 @@ export const Products = () => {
         }
       </nav>
       <hr />
-      {/*TODO: Replace with responsive products grid*/}
-      <pre dangerouslySetInnerHTML={{__html: JSON.stringify(filterProductsByCategory(selectedCategory), null, 2) }}>
-      </pre>
+      
+      <ProductList products={filterProductsByCategory(selectedCategory)} />
 
     </div>
   )

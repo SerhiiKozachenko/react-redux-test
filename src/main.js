@@ -55,6 +55,11 @@ if (__DEV__) {
   }
 }
 
+// Subscribe to state changes and save them to localeStorage
+store.subscribe(() => {
+  window.localStorage.setItem('app_state', JSON.stringify(store.getState()))
+});
+
 // Let's Go!
 // ------------------------------------
 if (!__TEST__) render()
