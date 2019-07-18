@@ -44,7 +44,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = ['Buy milk', 'Do exercises', 'Cook dinner']
+const initialState = JSON.parse(localStorage.getItem('todos')) || ['Buy milk', 'Do exercises', 'Cook dinner']
 export default function todosReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 

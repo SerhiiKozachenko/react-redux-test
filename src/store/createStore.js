@@ -2,12 +2,13 @@ import { applyMiddleware, compose, createStore as createReduxStore } from 'redux
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
+import persistTodosMiddleware from './persistTodosMiddleware'
 
 const createStore = (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const middleware = []
+  const middleware = [persistTodosMiddleware]
 
   // ======================================================
   // Store Enhancers
